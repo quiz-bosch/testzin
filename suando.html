@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Avaliação Outback</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    
+    <script src="js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js" async defer></script>
+    <script src="js/latest.js" async defer></script>
+    <script src="js/latest_1.js" async defer></script>
+    <script src="js/latest_2.js" async defer></script>
+    <script src="js/script.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    
+    <link rel="apple-touch-icon" sizes="32x32" href="favicon.html">
+    
+    <!-- Pixel do Facebook -->
+    <script>
+        !function(f,b,e,v,n,t,s) {
+            if(f.fbq) return;
+            n=f.fbq=function() {
+                n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
+            };
+            if(!f._fbq) f._fbq=n;
+            n.push=n;
+            n.loaded=!0;
+            n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);
+            t.async=!0;
+            t.src=v;
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1746597392776092'); // Substitua pelo seu ID do Pixel
+        fbq('track', 'PageView');
+    </script>
+    <!-- Fim do Código do Pixel do Facebook -->
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-bars" style="color: #ffffff"></i>
+        <img src="images/outback-logo.png" alt="Logo Outback">
+        <span id="saldo" style="margin-left: auto"></span>
+    </header>
+    
+    <main>
+        <div class="card pergunta01" id="pergunta01">
+            <div class="card__logo">
+                <img src="images/images-2.png" alt="Logo Pergunta 01">
+            </div>
+            <div class="card__satisfacao">
+                <h2>Qual é sua maior preocupação na hora de ir ao Outback?</h2>
+                <div class="card__gradeContainer">
+                    <div class="card__grade" id="card__grade1" onclick="toggleCard(this)"></div>
+                    <div class="card__grade" id="card__grade2" onclick="toggleCard(this)"></div>
+                    <div class="card__grade" id="card__grade3" onclick="toggleCard(this)"></div>
+                    <div class="card__grade" id="card__grade4" onclick="toggleCard(this)"></div>
+                </div>
+                <div class="card__gradeDescricao"></div>
+            </div>
+            <div class="card__resposta">
+                <h2><strong></strong></h2>
+                <div class="resposta__gradeContainer">
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p onclick="scrollToDown()">Preço</p>
+                    </div>
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p onclick="scrollToDown()">Qualidade</p>
+                    </div>
+                </div>
+            </div>
+            <button class="card__enviarResposta" id="enviarResposta01" onclick="pergunta01()" disabled>Enviar avaliação</button>
+        </div>
+        
+        <div class="card pergunta02" id="pergunta02" style="display: none">
+            <div class="card__logo">
+                <img src="images/OIP.jpg" alt="Logo Pergunta 02">
+            </div>
+            <div class="card__satisfacao">
+                <h2><strong>De 1 a 5: qual nota você dá para o delivery do Outback?</strong></h2>
+                <div class="card__gradeContainer">
+                    <div class="card__grade" id="card__grade5" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star5"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade6" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star6"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade7" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star7"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade8" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star8"></i>
+                    </div>
+                </div>
+                <div class="card__gradeDescricao">
+                    <p>Baixa</p>
+                    <p>Alta</p>
+                </div>
+            </div>
+            <div class="card__resposta">
+                <h2><strong>Você sabia que o Outback é um restaurante que se inspira no interior da Austrália?</strong></h2>
+                <div class="resposta__gradeContainer">
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p onclick="scrollToDown()">Sim</p>
+                    </div>
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p onclick="scrollToDown()">Não</p>
+                    </div>
+                </div>
+            </div>
+            <button class="card__enviarResposta" id="enviarResposta02" onclick="pergunta02()" disabled>Enviar avaliação</button>
+        </div>
+        
+        <div class="card pergunta03" id="pergunta03" style="display: none">
+            <div class="card__logo">
+                <img src="images/dr-form-outback-banner.png" alt="Banner Pergunta 03">
+            </div>
+            <div class="card__satisfacao">
+                <h2><strong>De 1 a 5, o que você acha da cebola frita do Outback?</strong></h2>
+                <div class="card__gradeContainer">
+                    <div class="card__grade" id="card__grade9" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star9"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade10" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star10"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade11" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star11"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade12" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star12"></i>
+                    </div>
+                </div>
+                <div class="card__gradeDescricao">
+                    <p>Baixa</p>
+                    <p>Alta</p>
+                </div>
+            </div>
+            <div class="card__resposta">
+                <h2><strong>Qual o prato que você mais gosta?</strong></h2>
+                <div class="resposta__gradeContainer">
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p>Petisco</p>
+                    </div>
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p>Almoço</p>
+                    </div>
+                </div>
+            </div>
+            <button class="card__enviarResposta" id="enviarResposta03" onclick="pergunta03()" disabled>Enviar avaliação</button>
+        </div>
+        
+        <div class="card pergunta04" id="pergunta04" style="display: none">
+            <div class="card__logo">
+                <img src="images/images-2.png" alt="Logo Pergunta 04">
+            </div>
+            <div class="card__satisfacao">
+                <h2><strong>De 1 a 5, você acha que o Outback é um bom lugar para comemorar o aniversário?</strong></h2>
+                <div class="card__gradeContainer">
+                    <div class="card__grade" id="card__grade13" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star13"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade14" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star14"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade15" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star15"></i>
+                    </div>
+                    <div class="card__grade" id="card__grade16" onclick="toggleCard(this)">
+                        <i class="fa-regular fa-star" id="star16"></i>
+                    </div>
+                </div>
+                <div class="card__gradeDescricao">
+                    <p>Baixa</p>
+                    <p>Alta</p>
+                </div>
+            </div>
+            <div class="card__resposta">
+                <h2><strong>Qual a sua sobremesa favorita?</strong></h2>
+                <div class="resposta__gradeContainer">
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p>Bolo</p>
+                    </div>
+                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+                        <p>Cheesecake</p>
+                    </div>
+                </div>
+            </div>
+            <button class="card__enviarResposta" id="enviarResposta04" onclick="pergunta04()" disabled>Enviar avaliação</button>
+        </div>
+        
+        <div class="card fim" id="fim" style="display: none">
+            <div class="card__logo">
+                <img src="images/OUTBACK-Voucher.jpg" alt="Voucher Outback">
+            </div>
+            <h2><strong>Obrigado pela sua participação! Você ganhou um voucher!</strong></h2>
+            <a href="https://outback.com.br/?utm_source=organicjLj66d165acdc90c5764d818bf4&amp;utm_campaign=rKm-km-rKm&amp;utm_medium=&amp;utm_content=&amp;utm_term=&amp;subid=organicjLj66d165acdc90c5764d818bf4&amp;sid2=rKm-km-rKm&amp;subid2=rKm-km-rKm&amp;subid3=&amp;subid4=&amp;subid5=rKm-km-rKm&amp;xcod=organicjLj66d165acdc90c5764d818bf4hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR&amp;sck=organicjLj66d165acdc90c5764d818bf4hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR" class="card__link" onclick="finalizar()">Clique aqui para resgatar!</a>
+        </div>
+    </main>
+    
+    <div class="modal">
+        <div class="modal__container">
+            <h2><strong>Você está pronto para começar!</strong></h2>
+            <p>Escolha o tamanho da sua avaliação.</p>
+            <a href="#" class="modal__btn" id="modal__btn" onclick="startSurvey()">Começar</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(element) {
+            const grades = document.querySelectorAll('.card__grade');
+            grades.forEach(grade => grade.classList.remove('selected'));
+            element.classList.add('selected');
+            enableSendButton();
+        }
+
+        function toggleResponse(element, responseClass) {
+            const responses = document.querySelectorAll('.resposta__grade');
+            responses.forEach(response => response.classList.remove('selected'));
+            element.classList.add('selected');
+            enableSendButton();
+        }
+
+        function scrollToDown() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        function pergunta01() {
+            document.getElementById('pergunta01').style.display = 'none';
+            document.getElementById('pergunta02').style.display = 'block';
+        }
+
+        function pergunta02() {
+            document.getElementById('pergunta02').style.display = 'none';
+            document.getElementById('pergunta03').style.display = 'block';
+        }
+
+        function pergunta03() {
+            document.getElementById('pergunta03').style.display = 'none';
+            document.getElementById('pergunta04').style.display = 'block';
+        }
+
+        function pergunta04() {
+            document.getElementById('pergunta04').style.display = 'none';
+            document.getElementById('fim').style.display = 'block';
+        }
+
+        function finalizar() {
+            Swal.fire('Obrigado!', 'Sua avaliação foi enviada com sucesso.', 'success');
+        }
+
+        function startSurvey() {
+            document.querySelector('.modal').style.display = 'none';
+            document.getElementById('pergunta01').style.display = 'block';
+        }
+
+        function enableSendButton() {
+            // Verifica se a avaliação e a resposta foram selecionadas
+            const perguntas = document.querySelectorAll('.card');
+            perguntas.forEach(pergunta => {
+                const button = pergunta.querySelector('.card__enviarResposta');
+                if (pergunta.querySelector('.card__grade.selected') && pergunta.querySelector('.resposta__grade.selected')) {
+                    button.disabled = false;
+                } else {
+                    button.disabled = true;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
