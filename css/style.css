@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
     margin: 0;
@@ -16,10 +16,8 @@ header {
     padding: 10px;
     column-gap: 2em;
     position: fixed;
-    z-index: 1;
-    background-color: 
-#A00F2D
-;
+    z-index: 10;
+    background-color: #A00F2D;
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,7 +71,7 @@ main {
 .main__descricao p {
     font-size: 16px;
     font-weight: 400;
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 
 .apresentacao {
@@ -103,10 +101,15 @@ main {
     font-size: 18px;
     font-weight: 600;
     color: #ffffff;
-    background-color: 
-    #A00F2D;
+    background-color: #A00F2D;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.apresentacao button:hover {
+    background-color: #D62400;
 }
 
 .popup__container {
@@ -120,11 +123,12 @@ main {
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
-    z-index: 1;
+    z-index: 20;
 }
 
 .popup {
     width: 100%;
+    max-width: 540px;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -133,6 +137,7 @@ main {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 15px;
+    z-index: 30;
 }
 
 .popup__titulo {
@@ -149,7 +154,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px 0px;
+    margin: 20px 0;
 }
 
 .popup__verificado i {
@@ -201,6 +206,12 @@ main {
     background-color: #A00F2D;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.popup__botao button:hover {
+    background-color: #D62400;
 }
 
 .popup__vermelho {
@@ -213,7 +224,7 @@ main {
     padding: 20px 35px;
     border-radius: 50%;
     color: white;
-    margin: 20px 0px;
+    margin: 20px 0;
 }
 
 .popup__descricao.baixar {
@@ -238,11 +249,13 @@ main {
 
 .card {
     width: 100%;
+    max-width: 540px;
     height: fit-content;
     padding: 20px;
     border: 1px solid #d3d3d3;
     background-color: #f1f1f1;
     border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 .card__logo img {
@@ -269,8 +282,7 @@ main {
 .card__gradeContainer {
     display: grid;
     width: 100%;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px;
     margin-top: 20px;
 }
@@ -280,7 +292,9 @@ main {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    transition: all ease 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    padding: 10px;
 }
 
 .card__grade i {
@@ -293,16 +307,15 @@ main {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    margin: 5px 0px 20px 0px;
+    margin: 5px 0 20px 0;
     color: #7e7e7e;
 }
 
 .resposta__gradeContainer {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0 20px 0;
 }
 
 .resposta__grade {
@@ -312,19 +325,19 @@ main {
     padding: 10px 15px;
     background-color: #d3d3d3;
     border-radius: 5px;
-    transition: all ease 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
 
 .resposta__grade.active {
     color: #ffffff;
-    background-color: 
-#D62400;
+    background-color: #D62400;
 }
 
 .resposta__grade p {
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.5;
+    letter-spacing: 0.5px;
     text-align: center;
 }
 
@@ -338,13 +351,17 @@ main {
     border-radius: 5px;
     outline: none;
     border: none;
-    transition: all ease 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s;
+    cursor: pointer;
 }
 
 .card__enviarResposta.active {
     color: #ffffff;
-    background-color: 
-#D62400;
+    background-color: #D62400;
+}
+
+.card__enviarResposta:hover {
+    background-color: #b03a28;
 }
 
 .main__videoContainer {
@@ -376,10 +393,16 @@ main {
     border: none;
     border-radius: 5px;
     margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.main__botao button:hover {
+    background-color: #D62400;
 }
 
 .finalizacao {
-    background-color: #f1f1f1;;
+    background-color: #f1f1f1;
 }
 
 .finalizacao__titulo {
@@ -433,12 +456,17 @@ main {
     font-size: 18px;
     font-weight: 600;
     color: #ffffff;
-    background-color: 
-    #A00F2D;;
+    background-color: #A00F2D;
     border: none;
     border-radius: 5px;
     margin-top: 10px;
     animation: pulse 2s infinite;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.finalizacao__botao button:hover {
+    background-color: #D62400;
 }
 
 @keyframes pulse {
@@ -458,5 +486,4 @@ main {
     .popup {
         max-width: 540px;
     }
-
 }
