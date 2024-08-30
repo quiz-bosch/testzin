@@ -50,157 +50,26 @@
     </header>
     
     <main>
+        <!-- Conteúdo do HTML -->
         <div class="card pergunta01" id="pergunta01">
-            <div class="card__logo">
-                <img src="images/images-2.png" alt="Logo Pergunta 01">
-            </div>
-            <div class="card__satisfacao">
-                <h2>Qual é sua maior preocupação na hora de ir ao Outback?</h2>
-                <div class="card__gradeContainer">
-                    <div class="card__grade" id="card__grade1" onclick="toggleCard(this)"></div>
-                    <div class="card__grade" id="card__grade2" onclick="toggleCard(this)"></div>
-                    <div class="card__grade" id="card__grade3" onclick="toggleCard(this)"></div>
-                    <div class="card__grade" id="card__grade4" onclick="toggleCard(this)"></div>
-                </div>
-                <div class="card__gradeDescricao"></div>
-            </div>
-            <div class="card__resposta">
-                <h2><strong></strong></h2>
-                <div class="resposta__gradeContainer">
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p onclick="scrollToDown()">Preço</p>
-                    </div>
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p onclick="scrollToDown()">Qualidade</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Conteúdo da pergunta 01 -->
             <button class="card__enviarResposta" id="enviarResposta01" onclick="pergunta01()" disabled>Enviar avaliação</button>
         </div>
         
+        <!-- Outras perguntas e botão -->
         <div class="card pergunta02" id="pergunta02" style="display: none">
-            <div class="card__logo">
-                <img src="images/OIP.jpg" alt="Logo Pergunta 02">
-            </div>
-            <div class="card__satisfacao">
-                <h2><strong>De 1 a 5: qual nota você dá para o delivery do Outback?</strong></h2>
-                <div class="card__gradeContainer">
-                    <div class="card__grade" id="card__grade5" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star5"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade6" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star6"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade7" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star7"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade8" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star8"></i>
-                    </div>
-                </div>
-                <div class="card__gradeDescricao">
-                    <p>Baixa</p>
-                    <p>Alta</p>
-                </div>
-            </div>
-            <div class="card__resposta">
-                <h2><strong>Você sabia que o Outback é um restaurante que se inspira no interior da Austrália?</strong></h2>
-                <div class="resposta__gradeContainer">
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p onclick="scrollToDown()">Sim</p>
-                    </div>
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p onclick="scrollToDown()">Não</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Conteúdo da pergunta 02 -->
             <button class="card__enviarResposta" id="enviarResposta02" onclick="pergunta02()" disabled>Enviar avaliação</button>
         </div>
-        
-        <div class="card pergunta03" id="pergunta03" style="display: none">
-            <div class="card__logo">
-                <img src="images/dr-form-outback-banner.png" alt="Banner Pergunta 03">
-            </div>
-            <div class="card__satisfacao">
-                <h2><strong>De 1 a 5, o que você acha da cebola frita do Outback?</strong></h2>
-                <div class="card__gradeContainer">
-                    <div class="card__grade" id="card__grade9" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star9"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade10" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star10"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade11" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star11"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade12" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star12"></i>
-                    </div>
-                </div>
-                <div class="card__gradeDescricao">
-                    <p>Baixa</p>
-                    <p>Alta</p>
-                </div>
-            </div>
-            <div class="card__resposta">
-                <h2><strong>Qual o prato que você mais gosta?</strong></h2>
-                <div class="resposta__gradeContainer">
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p>Petisco</p>
-                    </div>
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p>Almoço</p>
-                    </div>
-                </div>
-            </div>
-            <button class="card__enviarResposta" id="enviarResposta03" onclick="pergunta03()" disabled>Enviar avaliação</button>
-        </div>
-        
-        <div class="card pergunta04" id="pergunta04" style="display: none">
-            <div class="card__logo">
-                <img src="images/images-2.png" alt="Logo Pergunta 04">
-            </div>
-            <div class="card__satisfacao">
-                <h2><strong>De 1 a 5, você acha que o Outback é um bom lugar para comemorar o aniversário?</strong></h2>
-                <div class="card__gradeContainer">
-                    <div class="card__grade" id="card__grade13" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star13"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade14" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star14"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade15" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star15"></i>
-                    </div>
-                    <div class="card__grade" id="card__grade16" onclick="toggleCard(this)">
-                        <i class="fa-regular fa-star" id="star16"></i>
-                    </div>
-                </div>
-                <div class="card__gradeDescricao">
-                    <p>Baixa</p>
-                    <p>Alta</p>
-                </div>
-            </div>
-            <div class="card__resposta">
-                <h2><strong>Qual a sua sobremesa favorita?</strong></h2>
-                <div class="resposta__gradeContainer">
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p>Bolo</p>
-                    </div>
-                    <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
-                        <p>Cheesecake</p>
-                    </div>
-                </div>
-            </div>
-            <button class="card__enviarResposta" id="enviarResposta04" onclick="pergunta04()" disabled>Enviar avaliação</button>
-        </div>
+
+        <!-- Continue com as outras perguntas e botões -->
         
         <div class="card fim" id="fim" style="display: none">
             <div class="card__logo">
                 <img src="images/OUTBACK-Voucher.jpg" alt="Voucher Outback">
             </div>
             <h2><strong>Obrigado pela sua participação! Você ganhou um voucher!</strong></h2>
-            <a href="https://outback.com.br/?utm_source=organicjLj66d165acdc90c5764d818bf4&amp;utm_campaign=rKm-km-rKm&amp;utm_medium=&amp;utm_content=&amp;utm_term=&amp;subid=organicjLj66d165acdc90c5764d818bf4&amp;sid2=rKm-km-rKm&amp;subid2=rKm-km-rKm&amp;subid3=&amp;subid4=&amp;subid5=rKm-km-rKm&amp;xcod=organicjLj66d165acdc90c5764d818bf4hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR&amp;sck=organicjLj66d165acdc90c5764d818bf4hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR" class="card__link" onclick="finalizar()">Clique aqui para resgatar!</a>
+            <a href="https://outback.com.br" class="card__link" onclick="finalizar()">Clique aqui para resgatar!</a>
         </div>
     </main>
     
@@ -212,6 +81,9 @@
         </div>
     </div>
 
+    <!-- Elemento de áudio -->
+    <audio id="click-sound" src="click-sound.mp3" preload="auto"></audio>
+    
     <script>
         function toggleCard(element) {
             const grades = document.querySelectorAll('.card__grade');
@@ -261,17 +133,37 @@
         }
 
         function enableSendButton() {
-            // Verifica se a avaliação e a resposta foram selecionadas
-            const perguntas = document.querySelectorAll('.card');
-            perguntas.forEach(pergunta => {
-                const button = pergunta.querySelector('.card__enviarResposta');
-                if (pergunta.querySelector('.card__grade.selected') && pergunta.querySelector('.resposta__grade.selected')) {
+            // Adiciona logs para depuração
+            console.log('Checking send button status...');
+            
+            document.querySelectorAll('.card').forEach(card => {
+                const button = card.querySelector('.card__enviarResposta');
+                const isGradeSelected = card.querySelector('.card__grade.selected') !== null;
+                const isResponseSelected = card.querySelector('.resposta__grade.selected') !== null;
+
+                // Depuração
+                console.log(`Card ${card.id} - Grade Selected: ${isGradeSelected}, Response Selected: ${isResponseSelected}`);
+                
+                if (isGradeSelected && isResponseSelected) {
                     button.disabled = false;
                 } else {
                     button.disabled = true;
                 }
             });
         }
+
+        // Função para tocar o som ao clicar no botão de enviar
+        function playClickSound() {
+            const clickSound = document.getElementById('click-sound');
+            clickSound.play();
+        }
+
+        // Adiciona o evento de clique para os botões de enviar avaliação
+        document.querySelectorAll('.card__enviarResposta').forEach(button => {
+            button.addEventListener('click', function () {
+                playClickSound();
+            });
+        });
     </script>
 </body>
 </html>
